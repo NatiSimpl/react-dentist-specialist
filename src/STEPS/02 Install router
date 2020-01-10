@@ -1,0 +1,25 @@
+crear links con router:
+
+EN APP.JS 
+
+Agregar=> import {Route, Switch} from
+'react-router-dom'
+
+agregar en la funcion App=>
+<Route path="/" component={Home}/> PARA LINKEAR CADA PAGINA
+
+Para crear una ruta exacta para evitar la confusion con las otras paginas: <Route exact path="/" component={Home}/> 
+
+eliminar ;  <Route path="/" component={Error}/>
+<Route path="/dentists/" component={Error}/>
+
+En index.js=> ReactDOM.render(
+    <Router>
+        <App />
+    </Router>, 
+    document.getElementById("root"));
+
+Para ir en detalle dentro de dentists =>  <Route exact path="/dentists/:slug" component={SingleDoctor} />
+agregar el /:slug (tiene ":" porque es una variable) dejar la variable igual {SingleDoctor}
+
+agregar <Switch> (que funciona como un if) para redireccionarf las paginas a error que es el unico que no tiene "/"
